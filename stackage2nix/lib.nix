@@ -7,10 +7,7 @@
     name = "hackage-db";
     version = cacheVersion;
     phases = [ "installPhase" ];
-    src = builtins.fetchurl {
-      url = "https://hackage.haskell.org/01-index.tar.gz";
-      sha256 = "0hczs7fldxliw413ky926f4gp0c5dsxrxpy9kmm9v2fdh0gs9y81";
-    };
+    src = builtins.fetchurl { url = "https://hackage.haskell.org/01-index.tar.gz"; };
     installPhase = ''
       mkdir -p $out
       pushd $out
