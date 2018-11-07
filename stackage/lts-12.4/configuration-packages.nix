@@ -17,6 +17,7 @@ with haskellLib; self: super: {
   "ghc-prim" = null;
   "ghci" = null;
   "hpc" = null;
+  "stm" = null;
   "integer-gmp" = null;
   "pretty" = null;
   "process" = null;

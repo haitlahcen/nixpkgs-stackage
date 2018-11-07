@@ -7,11 +7,15 @@
     name = "hackage-db";
     version = cacheVersion;
     phases = [ "installPhase" ];
-    src = builtins.fetchurl { url = "https://hackage.haskell.org/01-index.tar.gz"; };
+    src = builtins.fetchGit {
+      url = "https://github.com/haitlahcen/hackage-db.git";
+      ref = "master";
+      rev = "b0ac419c8497f5caee46c9c5320c98f807467ea6";
+    };
     installPhase = ''
       mkdir -p $out
       pushd $out
-      cp $src 01-index.tar.gz
+      cp $src/01-index.tar.gz 01-index.tar.gz
       gunzip --keep 01-index.tar.gz
       popd
     '';
@@ -25,7 +29,7 @@
     src = builtins.fetchGit {
       url = "https://github.com/commercialhaskell/all-cabal-hashes.git";
       ref = "hackage";
-      rev = "abed6aa79c87ba374580615dd776863531d301ab";
+      rev = "bc9fc7c635cbb158a5e598ae080e06e250440e7c";
     };
     installPhase = ''
       mkdir -p $out
