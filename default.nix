@@ -25,7 +25,6 @@ in {
   };
 
   stackage2nixWrapper = import ./stackage2nix/impure.nix {
-    cacheVersion = builtins.readFile ./cache-version.txt;
     inherit self;
   };
 
@@ -36,6 +35,7 @@ in {
       in self.haskell.lib.overrideCabal stackagePackages.stackage2nix (drv: {
         enableSharedExecutables = false;
         enableSharedLibraries = false;
+        buildTools = [ self.glibc ];
         configureFlags = [
           "--ghc-option=-optl=-static"
           "--ghc-option=-optl=-L${self.glibc.static}/lib"
@@ -45,7 +45,6 @@ in {
           "--ghc-option=-optl=-L${self.zlib.static}/lib"
         ];
       });
-    cacheVersion = builtins.readFile ./cache-version.txt;
     inherit self;
   };
 

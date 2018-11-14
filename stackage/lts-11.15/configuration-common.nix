@@ -5,5 +5,6 @@ with haskellLib; self: super: {
     enableLibraryProfiling = false;
     enableExecutableProfiling = false;
     doHaddock = false;
+    doHoogle = false;
   });
 }

@@ -4,6 +4,9 @@
 with haskellLib; self: super: {
 
   # core packages
+  "parsec" = null;
+  "Cabal" = null;
+  "mtl" = null;
   "array" = null;
   "base" = null;
   "binary" = null;

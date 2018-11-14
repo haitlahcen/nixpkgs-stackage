@@ -75,11 +75,11 @@ let
          }:
          mkDerivation {
            pname = "stackage-curator";
-           version = "0.17.0.0";
+           version = "0.16.0.0";
            src = fetchgit {
              url = "https://github.com/fpco/stackage-curator.git";
-             sha256 = "0hymmzn59aszqxqs5s0mba8pzrky8wpkmy7hdgaxqrhg0syc6mkw";
-             rev = "73c5ed06602990c33d3fec1711e27875f283b6bf";
+             sha256 = "0nmh3dybs1cd64wdh1kmwy7b256v8y3k3gxvfjsh042cxilp1rr9";
+             rev = "eaeba273bdd38f121ad200b2a876227e666f86a2";
            };
            isLibrary = true;
            isExecutable = true;

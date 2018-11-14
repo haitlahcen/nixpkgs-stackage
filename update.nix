@@ -1,8 +1,7 @@
-{ nixpkgs ? import ./nixpkgs.nix {}
-, cacheVersion ? "0" }:
+{ nixpkgs ? import ./nixpkgs.nix {} }:
 
 with nixpkgs; let
-  lib = callPackage ./stackage2nix/lib.nix { inherit cacheVersion; };
+  lib = callPackage ./stackage2nix/lib.nix {};
 in stdenv.mkDerivation rec {
   name = "nixpkgs-typeable-update-script";
 

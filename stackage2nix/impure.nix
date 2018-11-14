@@ -1,5 +1,4 @@
 { self
-, cacheVersion
 , drv ? null }:
 
 let
@@ -12,7 +11,7 @@ let
     else
       drv;
 
-  lib = callPackage ./lib.nix { inherit cacheVersion; };
+  lib = callPackage ./lib.nix {};
 
 in stdenv.mkDerivation rec {
   name = "stackage2nix-${version}";
